@@ -107,7 +107,11 @@ public class KThread {
     public String getName() {
         return name;
     }
-
+    
+    public int getStatus() {
+        return status;
+    }
+    
     /**
      * Get the full name of this thread. This includes its name along with its
      * numerical ID. This name is used for debugging purposes only.
