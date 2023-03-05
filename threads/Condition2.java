@@ -59,11 +59,7 @@ public class Condition2 {
         if(!sleepingQueue.isEmpty()) {
             (sleepingQueue.removeFirst()).ready(); 
         }
-        //If wake() is called but there is no threads in the waiting queue return error message.
-        else {
-            System.out.println("ERROR: There is no threads in the waiting queue.");
-        }
-        
+
         Machine.interrupt().restore(intStatus); //Restore previous interrupts
     }
 
@@ -80,7 +76,7 @@ public class Condition2 {
         
         //If there's no elements in the queue and wakeAll is invoked then return an error message
         if(sleepingQueue.isEmpty()) {
-            System.out.println("ERROR: There is no threads in the waiting queue.");
+           // System.out.println("ERROR: There is no threads in the waiting queue.");
         }
     }
 
