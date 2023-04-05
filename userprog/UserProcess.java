@@ -371,7 +371,7 @@ public class UserProcess {
     */
     public boolean invalidFileDescriptor(int fileDescriptor) {
         //If the index given is not equal to an integer between 0 and 15 return true;
-        if (fileDescriptor < 0 || fileDescriptor < 15) {
+        if (fileDescriptor < 0 || fileDescriptor > 15) {
             return true;
         }
         if (findEmptyFileDescriptor() == -1) {
@@ -534,7 +534,7 @@ public class UserProcess {
         if(suceeded == false) {
             return -1;
         }
-        return 0; //Sucessfully unlinked the account
+        return 0; //Sucessfully unlinked the file
     }
     /*
     Task 3 System calls : handleJoin(), handleExit(), handleExec()
@@ -576,8 +576,7 @@ public class UserProcess {
         if (byteCount != 4) {
             return 1;
         } 
-        
-        return -1;
+        return 0;
     }
     
     /*
